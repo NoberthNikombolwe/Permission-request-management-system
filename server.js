@@ -9,6 +9,10 @@ const modullesRoutes = require('./modullesController');
 const studentsRoutes = require('./studentsController');
 const lecturesRoutes = require('./lecturesController');
 const permissionsRoutes = require('./permissionsController');
+// const ensureAuthenticated = require('./authMiddleware');
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
+// const authRoutes = require('./routes');
 
 const app = express();
 const port = 3030;

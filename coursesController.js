@@ -8,8 +8,8 @@ router.post('/courses', (req, res) => {
   const query = 'INSERT INTO courses (name) VALUES (?)';
   connection.query(query, [name], (err, results) => {
     if (err) throw err;
-    // res.json({ courseId: results.insertId, message: 'Course created successfully' });
-    res.redirect('/courses/');
+    res.json({ courseId: results.insertId, message: 'Course created successfully' });
+    // res.redirect('/courses/');
   });
 });
 
@@ -62,7 +62,7 @@ router.post('/courses/:courseId/edit', (req, res) => {
   const courseId = req.params.courseId;
   const { name } = req.body;
 
-  const updateQuery = 'UPDATE courses SET name = ? = ? WHERE id = ?';
+  const updateQuery = 'UPDATE courses SET name = ?  WHERE id = ?';
   connection.query(updateQuery, [name, courseId], (error) => {
     if (error) {
       return res.status(500).json({ error: 'Error updating the course' });

@@ -1,15 +1,15 @@
 
-
 extends layout
 
 block content
-
-
+  head
+    title lecture List
     style.
       body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         padding: 20px;
+        
       }
 
       h2 {
@@ -17,10 +17,9 @@ block content
       }
 
       table {
-        width: 100%;
+        width: 80%;
         border-collapse: collapse;
-        margin-top: 20px;
-        padding: 20px;
+        margin-bottom: 10px;
       }
 
       th, td {
@@ -34,42 +33,42 @@ block content
         color: white;
       }
 
-      button {
-        background-color: red;
-        color: white;
-        padding: 8px 12px;
-        text-decoration: none;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 5px;
+      .add-button {
+        margin-bottom: 20px;
       }
+
       .add-button button{
         background-color: #4caf50;
         border:none;
         padding: 10px 20px;
       }
 
-    h2 All Modules
+  body
+    h2 Lecture List
 
     .add-button
-      a(href='/api/addmodulles/')
-        button Add Module
-
+      a(href='/api/addlectures/')
+        button Add lecture
     table
       thead
         tr
-          th Module Name
-          th Module Code
+          th Name
+          th Email
+          th Phone
+          th Module ID
           th Actions
 
       tbody
-        each modulle in modulles
+        each lecture in lectures
           tr
-            td #{modulle.name}
-            td #{modulle.coden}
+            td #{lecture.firstname} #{lecture.lastname}
+            td #{lecture.email}
+            td #{lecture.phone}
+            td #{lecture.modulle_id}
             td
-              a(href=`/api/modulles/${modulle.id}/edit`) Edit
-              | 
-              form(action=`/api/modulles/${modulle.id}/delete`, method='POST')
+              a(href=`/api/lectures/${lecture.id}/edit`) Edit
+              |  |
+              a(href=`/lectures/${lecture.id}`) View
+              |  |
+              form(action=`/lectures/${lecture.id}/delete`, method='POST')
                 button(type='submit') Delete

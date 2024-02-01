@@ -65,7 +65,7 @@ block content
             tr
             td #{course.name}
             td
-                a(href=`/courses/${course.id}/edit`) Edit
+                a(href=`/api/courses/${course.id}/edit`) Edit
                 | 
                 form(action=`/courses/${course.id}/delete`, method='POST')
                 button(type='submit') Delete

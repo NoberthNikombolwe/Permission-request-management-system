@@ -66,9 +66,9 @@ block content
             td #{student.phone}
             td #{student.course_id}
             td
-              a(href=`/students/${student.id}/edit`) Edit
+              a(href=`/api/students/${student.id}/edit`) Edit
               |  |
-              a(href=`/students/${student.id}`) View
+              a(href=`/api/students/${student.id}`) View
               |  |
-              form(action=`/students/${student.id}/delete`, method='POST')
+              form(action=`/api/students/${student.id}/delete`, method='POST')
                 button(type='submit') Delete

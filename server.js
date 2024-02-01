@@ -8,6 +8,7 @@ const coursesRoutes = require('./coursesController');
 const modullesRoutes = require('./modullesController');
 const studentsRoutes = require('./studentsController');
 const lecturesRoutes = require('./lecturesController');
+const permissionsRoutes = require('./permissionsController');
 
 const app = express();
 const port = 3030;
@@ -36,6 +37,8 @@ app.use('/api', coursesRoutes);
 app.use('/api', modullesRoutes);
 app.use('/api', studentsRoutes);
 app.use('/api', lecturesRoutes);
+app.use('/api', permissionsRoutes);
+
 
 
 // Middleware
@@ -62,7 +65,7 @@ app.get('/dashboard', (req, res) => {
 app.get("/reg", (req, res) => {
     res.render("register", { title: "Dashboard" });
   });
-  
+
 app.get('/login', (req, res) => {
     res.render('login');
 });

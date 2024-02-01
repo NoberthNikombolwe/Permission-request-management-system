@@ -1,0 +1,71 @@
+extends layout
+
+block content
+    h1 Edit modulle
+
+    form(action=`/api/modulles/${modulle.id}/edit`, method='POST')
+      label(for='name') modulle Name:
+      input(type='text', name='name', value=modulle.name, required)
+
+      button(type='submit') Update modulle
+
+
+extends layout
+
+block content
+    style.
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    h1 Permission Form
+
+    form(action='/api/permissions/${permission.id}/edit', method='POST')
+      label(for='name') title :
+      input(type='text', name='title', required)
+
+      label(for='name') Permission Name:
+      textarea(name="body", cols="30", rows="10", required) 
+
+      label(for='name') module :
+      input(type='text', name='modulle_id', required)
+      
+      label(for='name') student :
+      input(type='text', name='student_id', required)
+
+      button(type='submit') Submit

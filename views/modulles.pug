@@ -1,0 +1,75 @@
+
+
+extends layout
+
+block content
+
+
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        padding: 20px;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      button {
+        background-color: red;
+        color: white;
+        padding: 8px 12px;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .add-button button{
+        background-color: #4caf50;
+        border:none;
+        padding: 10px 20px;
+      }
+
+    h2 All Modules
+
+    .add-button
+      a(href='/api/addmodulles/')
+        button Add Module
+
+    table
+      thead
+        tr
+          th Module Name
+          th Module Code
+          th Actions
+
+      tbody
+        each modulle in modulles
+          tr
+            td #{modulle.name}
+            td #{modulle.coden}
+            td
+              a(href=`/modulles/${modulle.id}/edit`) Edit
+              | 
+              form(action=`/modulles/${modulle.id}/delete`, method='POST')
+                button(type='submit') Delete

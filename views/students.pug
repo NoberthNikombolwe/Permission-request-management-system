@@ -1,0 +1,74 @@
+
+extends layout
+
+block content
+  head
+    title Student List
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+        
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .add-button {
+        margin-bottom: 20px;
+      }
+
+      .add-button button{
+        background-color: #4caf50;
+        border:none;
+        padding: 10px 20px;
+      }
+
+  body
+    h2 Student List
+
+    .add-button
+      a(href='/api/addstudents/')
+        button Add Student
+    table
+      thead
+        tr
+          th Name
+          th Email
+          th Phone
+          th Course ID
+          th Actions
+
+      tbody
+        each student in students
+          tr
+            td #{student.firstname} #{student.lastname}
+            td #{student.email}
+            td #{student.phone}
+            td #{student.course_id}
+            td
+              a(href=`/students/${student.id}/edit`) Edit
+              |  |
+              a(href=`/students/${student.id}`) View
+              |  |
+              form(action=`/students/${student.id}/delete`, method='POST')
+                button(type='submit') Delete

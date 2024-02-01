@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Edit Course
+
+    form(action=`/courses/${course.id}/edit`, method='POST')
+      label(for='name') Course Name:
+      input(type='text', name='name', value=course.name, required)
+
+      button(type='submit') Update Course

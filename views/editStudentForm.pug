@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Edit Course
+
+    form(action=`/modulles/${modulle.id}/edit`, method='POST')
+      label(for='name') modulle Name:
+      input(type='text', name='name', value=modulle.name, required)
+
+      button(type='submit') Update modulle

@@ -1,0 +1,67 @@
+extends layout
+
+block content
+    title User Form
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    body
+      h1 Register Student
+
+    form(action='students/', method='POST')
+      label(for='firstname') First Name:
+      input(type='text', name='firstname', required)
+
+      label(for='lastname') Last Name:
+      input(type='text', name='lastname', required)
+
+      label(for='email') Email:
+      input(type='email', name='email', required)
+
+      label(for='phone') Phone:
+      input(type='text', name='phone', required)
+
+      label(for='password') Password:
+      input(type='password', name='password', required)
+
+      label(for='course_id') Course ID:
+      input(type='text', name='course_id', required)
+
+      button(type='submit') Register

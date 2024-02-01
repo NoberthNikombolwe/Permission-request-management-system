@@ -1,0 +1,68 @@
+h2 PRMS-DIT
+h3 Admin Login
+
+form(action='/login', method='post', class='login-form')
+    label(for='email', class='form-label') Email:
+    input(type='email', id='email', name='email', required, class='form-input')
+
+    label(for='password', class='form-label') Password:
+    input(type='password', id='password', name='password', required, class='form-input')
+
+    button(type='submit', class='submit-button') Login
+    br
+    br
+    a(href='/reg')  I dont have account ?
+
+style.
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+  }
+
+  h2, h3 {
+    color: #333;
+    text-align: center;
+  }
+
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .submit-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+
+
+
+

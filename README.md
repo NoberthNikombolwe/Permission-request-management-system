@@ -4,7 +4,7 @@ This system manages the permission requests between students and lectures within
 <h2>Usefull material</h2>
 
     Use details below to have access to the Admin Panel
-        email: noberth@gmail.com
+        email: nobert@gmail.com
         password: 12345
 
 <h2>1. Entities and Relationships:</h2>
